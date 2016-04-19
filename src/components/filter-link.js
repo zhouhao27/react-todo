@@ -12,10 +12,7 @@ export default class FilterLink extends React.Component {
     return (
       <a href='#' onClick={ e => {
         e.preventDefault();
-        store.dispatch({
-          type: 'SET_VISIBILITY_FILTER',
-          filter
-        })
+        this.props.onClick(this.props.filter)
       }}
       >
         {this.props.children}
