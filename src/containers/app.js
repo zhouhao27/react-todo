@@ -2,9 +2,9 @@
 
 import React from 'react'
 
-import TodoList from '../components/todo-list'
-import AddTodo from '../components/add-todo'
-import Footer from '../components/footer'
+import {TodoList} from '../components/todo-list'
+import {AddTodo} from '../components/add-todo'
+import {Footer} from '../components/footer'
 
 import {SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE} from '../constants/states'
 import {ADD_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER} from '../constants/action-types'
