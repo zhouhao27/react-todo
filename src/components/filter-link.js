@@ -1,24 +1,27 @@
 'use strict'
 
 import React from 'react'
+import {Link} from './link'
+import {SET_VISIBILITY_FILTER} from '../constants/action-types'
 
-export const FilterLink = ({
-  filter,
-  currentFilter,
-  children,
-  onClick}) => {
+// container component
+export class FilterLink extends React.Component {
+  render() {
+    const {store} = this.props
+    const state = store.getState()
 
-  if (filter === currentFilter) {
-    return <span>{children}</span>;
+    return (
+      <Link
+        active = {this.props.filter === state.visibilityFilter}
+        onClick = { () =>
+          store.dispatch({
+            type: SET_VISIBILITY_FILTER,
+            filter: this.props.filter
+          })
+        }
+      >
+      {this.props.children}
+      </Link>
+    )
   }
-
-  return (
-    <a href='#' onClick={ e => {
-      e.preventDefault();
-      onClick(filter)
-    }}
-    >
-      {children}
-    </a>
-  )
 }

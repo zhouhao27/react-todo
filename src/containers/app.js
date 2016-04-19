@@ -50,15 +50,7 @@ export default class TodoApp extends React.Component {
            })
          }
         />
-      <Footer
-        currentFilter={visibilityFilter}
-        onFilterClick={(filter) =>
-          store.dispatch({
-            type: SET_VISIBILITY_FILTER,
-            filter
-          })
-        }
-      />
+      <Footer store={store}/>
     </div>
   )};
 }

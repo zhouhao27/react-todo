@@ -6,6 +6,7 @@ import {FilterLink} from './filter-link'
 import {SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE} from '../constants/states'
 
 export const Footer = ({
+  store,
   currentFilter,
   onFilterClick
 }) => {
@@ -13,27 +14,15 @@ export const Footer = ({
     <p>
     Show:
     {' '}
-    <FilterLink
-      filter={SHOW_ALL}
-      currentFilter = {currentFilter}
-      onClick={(f) => onFilterClick(f)}
-    >
+    <FilterLink filter={SHOW_ALL} store={store}>
       All
     </FilterLink>
     {' '}
-    <FilterLink
-      filter={SHOW_ACTIVE}
-      currentFilter = {currentFilter}
-      onClick={(f) => onFilterClick(f)}
-    >
+    <FilterLink filter={SHOW_ACTIVE} store={store}>
       Active
     </FilterLink>
     {' '}
-    <FilterLink
-      filter={SHOW_COMPLETED}
-      currentFilter = {currentFilter}
-      onClick={(f) => onFilterClick(f)}
-    >
+    <FilterLink filter={SHOW_COMPLETED} store={store}>
       Completed
     </FilterLink>
     </p>
