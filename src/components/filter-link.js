@@ -6,8 +6,9 @@ import {SET_VISIBILITY_FILTER} from '../constants/action-types'
 
 // container component
 export class FilterLink extends React.Component {
+
   render() {
-    const {store} = this.props
+    const {store} = this.context
     const state = store.getState()
 
     return (
@@ -24,4 +25,7 @@ export class FilterLink extends React.Component {
       </Link>
     )
   }
+}
+FilterLink.contextTypes = {
+  store: React.PropTypes.object
 }

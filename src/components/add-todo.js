@@ -1,8 +1,12 @@
 'use strict'
 
 import React from 'react'
+import {ADD_TODO} from '../constants/action-types'
 
-export const AddTodo = ({onAddTodo}) => {
+let nextId = 0
+
+// presentation and container component
+export const AddTodo = (props,{store}) => {
   let input
   return (
     <div>
@@ -10,12 +14,18 @@ export const AddTodo = ({onAddTodo}) => {
         input = node
       } />
       <button onClick={ () => {
-          onAddTodo(input.value)
-          input.value = ''
-        }
-      }>
+        store.dispatch({
+          type:ADD_TODO,
+          text:input.value,
+          id: nextId++
+        })
+        input.value = ''
+      }}>
         Add a Todo
       </button>
     </div>
   )
+}
+AddTodo.contextTypes = {
+  store: React.PropTypes.object
 }
