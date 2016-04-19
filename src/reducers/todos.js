@@ -18,7 +18,7 @@ export default function todos(state = [], action) {
 }
 
 // todo reducer which is called composition reducer
-const todo = (state, action) => {
+function todo(state, action) {
   switch(action.type) {
     case ADD_TODO:
       return {

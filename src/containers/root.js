@@ -2,6 +2,7 @@
 
 import React from 'react'
 import TodoApp from './app'
+import DevTools from './dev-tools'
 
 export default class Root extends React.Component {
   render() {
@@ -9,7 +10,7 @@ export default class Root extends React.Component {
     return (
       <div>
         <TodoApp {...store.getState()} store={store}/>
-        {/*<DevTools />*/}
+        <DevTools store={store}/>
       </div>
     )
   }

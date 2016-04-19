@@ -10,7 +10,6 @@ import {SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE} from '../constants/states'
 import {ADD_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER} from '../constants/action-types'
 
 const getVisibleTodos = (todos, filter) => {
-  console.log(`getVisibleTodos: todos=${todos} filter=${filter}`);
   switch (filter) {
     case SHOW_ALL:
       return todos;
