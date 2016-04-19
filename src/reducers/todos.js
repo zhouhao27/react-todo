@@ -31,14 +31,9 @@ function todo(state, action) {
         return state
       }
 
-      //TODO: ES7, doesn't work
-      // const newState = {
-      //   ...state,
-      //   completed: !state.completed
-      // }
+      // ES7
       const newState = {
-        id: state.id,
-        text: state.text,
+        ...state,
         completed: !state.completed
       }
 
