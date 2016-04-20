@@ -1,7 +1,7 @@
 {
-  "name": "react",
+  "name": "react-todo",
   "version": "1.0.0",
-  "description": "",
+  "description": "A todo application which is using React, Redux, React-redux.",
   "scripts": {
     "test": "jest",
     "start": "webpack-dev-server --hot --inline --progress"
