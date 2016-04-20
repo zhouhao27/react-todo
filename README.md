@@ -1,13 +1,13 @@
 A fully working version of a Todo application based on React, Redux from [Getting Started with Redux](https://egghead.io/series/getting-started-with-redux)
 
+![screenshot](https://github.com/zhouhao27/react-todo/blob/master/img/screenshot.png)
+
 ## Features
 
 - Webpack
 - ES6, ES7
 - Redux-devtools
 - Jest unit test
-
-![screenshot](https://github.com/zhouhao27/react-todo/blob/master/img/screenshot.png)
 
 ### File structure
 
