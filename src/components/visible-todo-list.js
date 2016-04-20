@@ -2,9 +2,10 @@
 
 import React from 'react'
 import {TodoList} from './todo-list'
+import {connect} from 'react-redux'
 
+import {toggleTodo} from '../actions/todo-action'
 import {SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE} from '../constants/states'
-import {TOGGLE_TODO} from '../constants/action-types'
 
 const getVisibleTodos = (todos, filter) => {
   switch (filter) {
@@ -17,21 +18,21 @@ const getVisibleTodos = (todos, filter) => {
   }
 }
 
-// container component
-export const VisibleTodoList = (props,{store}) => {
+const mapStatesToProps = (state) => {
+  return {
+    todos: getVisibleTodos(state.todos,state.visibilityFilter)
+  }
+}
 
-  return(
-    <TodoList
-      todos={getVisibleTodos(store.getState().todos, store.getState().visibilityFilter)}
-      onTodoClick={(id)=>
-       store.dispatch({
-         type:TOGGLE_TODO,
-         id
-       })
-     }
-    />
-  )
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onTodoClick : (id)=> {
+      dispatch(toggleTodo(id))
+    }
+  }
 }
-VisibleTodoList.contextTypes = {
-  store: React.PropTypes.object
-}
+
+export const VisibleTodoList = connect(
+  mapStatesToProps,
+  mapDispatchToProps
+)(TodoList)

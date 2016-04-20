@@ -2,25 +2,30 @@
 
 import React from 'react'
 import {Link} from './link'
-import {SET_VISIBILITY_FILTER} from '../constants/action-types'
+import {connect} from 'react-redux'
+
+import {setVisibilityFilter} from '../actions/visibility-action'
 
 // container component
-export const FilterLink = (props,{store}) => {
-  const state = store.getState()
-  return (
-    <Link
-      active = {props.filter === state.visibilityFilter}
-      onClick = { () =>
-        store.dispatch({
-          type: SET_VISIBILITY_FILTER,
-          filter: props.filter
-        })
-      }
-    >
-    {props.children}
-    </Link>
-  )
+const mapStatesToProps = (
+  state,
+  ownProps
+) => {
+  return {
+    active: ownProps.filter === state.visibilityFilter
+  }
 }
-FilterLink.contextTypes = {
-  store: React.PropTypes.object
+const mapDispatchToProps = (
+  dispatch,
+  ownProps
+) => {
+  return {
+    onClick: () => {
+      dispatch(setVisibilityFilter(ownProps.filter));
+    }
+  }
 }
+export const FilterLink = connect(
+  mapStatesToProps,
+  mapDispatchToProps
+)(Link)

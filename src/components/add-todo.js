@@ -1,12 +1,11 @@
 'use strict'
 
 import React from 'react'
-import {ADD_TODO} from '../constants/action-types'
-
-let nextId = 0
+import {connect} from 'react-redux'
+import {addTodo} from '../actions/todo-action'
 
 // presentation and container component
-export const AddTodo = (props,{store}) => {
+export let AddTodo = ({dispatch}) => {
   let input
   return (
     <div>
@@ -14,11 +13,7 @@ export const AddTodo = (props,{store}) => {
         input = node
       } />
       <button onClick={ () => {
-        store.dispatch({
-          type:ADD_TODO,
-          text:input.value,
-          id: nextId++
-        })
+        dispatch(addTodo(input.value))
         input.value = ''
       }}>
         Add a Todo
@@ -26,6 +21,4 @@ export const AddTodo = (props,{store}) => {
     </div>
   )
 }
-AddTodo.contextTypes = {
-  store: React.PropTypes.object
-}
+AddTodo = connect()(AddTodo)
