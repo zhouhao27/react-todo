@@ -5,14 +5,29 @@ A fully working version of a Todo application based on React, Redux from [Gettin
 - Webpack
 - ES6, ES7
 - Redux-devtools
+- Jest unit test
 
 ### File structure
 
 ![file structure](https://github.com/zhouhao27/react-todo/blob/master/img/file-structure.png)
 
+### Install
+
+> git clone https://github.com/zhouhao27/react-todo
+> cd react-todo
+> npm i
+
+### Run
+
+> npm start
+
+### Test
+
+> npm test
+
 ### TODO
 
-1. Add test case
+1. Add more test cases
 
 ### References
 
