@@ -17,4 +17,5 @@ A fully working version of a Todo application based on React, Redux from [Gettin
 ### References
 
 https://github.com/gaearon/redux-devtools
+
 https://egghead.io/series/getting-started-with-redux
