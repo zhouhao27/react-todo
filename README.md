@@ -8,7 +8,7 @@ A fully working version of a Todo application based on React, Redux from [Gettin
 
 ### File structure
 
-![file structure](https://github.com/zhouhao27/react-todo/img/file-structure.png)
+![file structure](https://github.com/zhouhao27/react-todo/blob/master/img/file-structure.png)
 
 ### TODO
 
