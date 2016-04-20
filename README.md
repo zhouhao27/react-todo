@@ -7,6 +7,8 @@ A fully working version of a Todo application based on React, Redux from [Gettin
 - Redux-devtools
 - Jest unit test
 
+![screenshot](https://github.com/zhouhao27/react-todo/blob/master/img/screenshot.png)
+
 ### File structure
 
 ![file structure](https://github.com/zhouhao27/react-todo/blob/master/img/file-structure.png)
@@ -14,7 +16,9 @@ A fully working version of a Todo application based on React, Redux from [Gettin
 ### Install
 
 > git clone https://github.com/zhouhao27/react-todo
+
 > cd react-todo
+
 > npm i
 
 ### Run
